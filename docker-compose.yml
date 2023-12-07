@@ -9,4 +9,4 @@ services:
       - 3001:3001
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
-      - /tank/docker/uptime-kuma:/app/data
+      - /containers/uptime-kuma:/app/data
