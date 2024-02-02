@@ -5,8 +5,7 @@ services:
     container_name: uptime-kuma
     image: louislam/uptime-kuma
     restart: unless-stopped
-    ports:
-      - 3001:3001
+    network_mode: host
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - /tank/containers/uptime-kuma:/app/data
