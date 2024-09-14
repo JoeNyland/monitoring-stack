@@ -10,7 +10,7 @@ services:
       traefik.enable: true
       traefik.http.services.uptime-kuma.loadbalancer.server.port: 3001
       traefik.http.routers.uptime-kuma.rule: Host(`monitoring`)
-      traefik.http.routers.uptime-kuma.middlewares: uptime-kuma-ipallowlist
+      traefik.http.routers.uptime-kuma.middlewares: uptime-kuma-ipallowlist, authentik@docker
       traefik.http.middlewares.uptime-kuma-ipallowlist.ipallowlist.sourcerange: >
         2a00:23c8:bda0:b310::/64,
         10.10.0.0/16,
