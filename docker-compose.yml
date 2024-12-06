@@ -3,12 +3,12 @@ services:
     container_name: uptime-kuma
     image: louislam/uptime-kuma
     restart: unless-stopped
-    network_mode: host
+    ports:
+      - 3001:3001
     environment:
       NODE_EXTRA_CA_CERTS: /app/data/ca.crt
     labels:
       traefik.enable: true
-      traefik.http.services.uptime-kuma.loadbalancer.server.port: 3001
       traefik.http.routers.uptime-kuma.rule: Host(`monitoring`)
       traefik.http.routers.uptime-kuma.middlewares: trusted-ipallowlist
     volumes:
