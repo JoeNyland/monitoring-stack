@@ -3,8 +3,9 @@ services:
     container_name: uptime-kuma
     image: louislam/uptime-kuma
     restart: unless-stopped
-    ports:
-      - 3001:3001
+    networks:
+      - default
+      - proxy
     environment:
       NODE_EXTRA_CA_CERTS: /app/data/ca.crt
     labels:
@@ -18,3 +19,5 @@ services:
 networks:
   default:
     enable_ipv6: true
+  proxy:
+    external: true
