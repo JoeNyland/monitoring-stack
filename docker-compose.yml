@@ -1,6 +1,5 @@
 services:
   uptime-kuma:
-    container_name: uptime-kuma
     image: louislam/uptime-kuma
     restart: unless-stopped
     networks:
