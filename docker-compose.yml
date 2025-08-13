@@ -11,7 +11,6 @@ services:
     labels:
       traefik.enable: true
       traefik.http.routers.uptime-kuma.rule: Host(`monitoring`)
-      traefik.http.routers.uptime-kuma.middlewares: trusted-ipallowlist
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - /containers/uptime-kuma:/app/data
